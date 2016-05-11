@@ -1,0 +1,36 @@
+
+<div class="container"  >
+ <% @items.each do |item| %>
+
+    <div id="products" class="row list-group" style="display: inline-block; width:50%; padding:20px;">
+        <div class="item  col-xs-4 col-lg-4"style=width:100%;">
+            <div class="thumbnail">
+            
+            <%= image_tag item.image.url , :class=>"group list-group-image", :alt=>"" , :style=>"width:200px; height:200px;padding:8px;" %>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <%= item.name %></h4>
+                    <p class="group inner list-group-item-text">
+                        <%= item.description %></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= item.price %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+						<% if current_user.present? %>
+                           
+                        <%= link_to 'Buy Now', itempage_path(item, :id=>item.id), :class=>'btn btn-success', :style=>'color:#FFFFFF; text-decoration:none;' %>
+						<% else %>
+						
+						<%end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      
+    </div>
+    <% end %>
+</div>

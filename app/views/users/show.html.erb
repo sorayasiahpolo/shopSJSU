@@ -1,0 +1,14 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to 'New User', new_user_path %></li>
+    <li><%= link_to 'Edit', edit_user_path(@user) %></li>
+    <li><%= link_to 'Items', items_path %></li>
+  </ul>
+</div>
+<div class="jumbotron">
+  <p class="alert alert-success" id="notice"><%= notice %></p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>  
+</div>
