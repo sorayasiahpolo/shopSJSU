@@ -62,5 +62,5 @@ gem 'holder_rails'
 gem 'mailboxer'
 gem 'activerecord-reset-pk-sequence'
 gem 'chosen-rails'
-
+gem 'rails_12factor', group: :production
 
